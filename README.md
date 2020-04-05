@@ -1,6 +1,6 @@
 # Ambiente Laravel com Docker e Docker-Compose
 
- ![Laravel Docker-Compose](laravel-compose.png#center)
+ ![Laravel Docker-Compose](laravel-compose.png)
 
 ## Introdução
 
