@@ -1,5 +1,7 @@
 # Ambiente Laravel com Docker e Docker-Compose
 
+![Laravel Docker-Compose](laravel-compose.png)
+
 ## Introdução
 
 Crie um ambiente de **DEV** com Laravel de forma **Extremamente Rápida**.\
