@@ -32,8 +32,8 @@ O que vai subir usando o docker-compose:
 
 ```bash
 sudo apt-get update
-sudo apt-get install -yq apt-transport-https tzdata ca-certificates software-properties-common
-sudo apt-get install -yq curl docker.io socat lxc git-core vim iptables
+sudo apt-get install -yq apt-transport-https ca-certificates software-properties-common
+sudo apt-get install -yq docker.io socat lxc git-core
 sudo apt-get install -yq python3-pip python3-dev python3-setuptools
 
 sudo usermod -aG docker $USER
