@@ -22,7 +22,7 @@ O que vai subir usando o docker-compose:
 - **Caso tenha outro sistema operacional:**
 - Instale através do [link](https://docs.docker.com/compose/install/)
 - **Depois de instalado docker e docker-compose:**
-- Execute a [Etapa 2](#etapa-2)
+- Execute a [Etapa 2](#etapa-2) e depois a [Etapa 3](#etapa-3)
 
 **Com Docker e Docker-Compose esse ambiente de DEV pode ser criado em qualquer Sistema Operacional.**
 
@@ -35,7 +35,6 @@ sudo apt-get update
 sudo apt-get install -yq apt-transport-https ca-certificates software-properties-common
 sudo apt-get install -yq docker.io socat lxc git-core
 sudo apt-get install -yq python3-pip python3-dev python3-setuptools
-
 sudo usermod -aG docker $USER
 
 sudo -H pip3 install --upgrade pip
@@ -51,35 +50,30 @@ docker-compose version
 git clone https://github.com/jniltinho/laravel-docker.git
 cd laravel-docker
 docker run --rm -it -v $PWD:/app composer create-project --prefer-dist laravel/laravel lara-app
+
+## Caso esteja usando Linux ou Mac
 sudo chown -R $USER:$USER lara-app
+
 cd lara-app
-sed -i "s|DB_HOST=127.0.0.1|DB_HOST=mysql-app|" .env
-sed -i "s|DB_PASSWORD=|DB_PASSWORD=laravel|" .env
-
 cp ../docker-compose.yaml ../Dockerfile .
-chmod -R gu+w storage ; chmod -R guo+w storage
-#php artisan cache:clear
-
 docker-compose up -d --build
-## Para Acessar a sua app Laravel: http://127.0.0.1:8080
 ```
 
-## Acessando o Container e rodando os comandos
+## Etapa 3
+
+**Acessando o Container e rodando os comandos.**
 
 ```bash
 #docker-compose exec laravel-app /bin/bash
 #docker-compose exec laravel-app php artisan key:generate
 
 docker-compose exec laravel-app ls -l
+docker-compose exec laravel-app chmod -R gu+w storage
+docker-compose exec laravel-app chmod -R guo+w storage
+#docker-compose exec laravel-app php artisan cache:clear
+docker-compose exec laravel-app sed -i 's|DB_HOST=127.0.0.1|DB_HOST=mysql-app|' .env
+docker-compose exec laravel-app sed -i 's|DB_PASSWORD=|DB_PASSWORD=laravel|' .env
 docker-compose exec laravel-app php artisan migrate
-```
-
-## Comandos Docker
-
-```bash
-docker exec -it lara-app_laravel-app_1 /bin/bash
-docker ps
-docker-compose down
 ```
 
 ## Acessos das aplicações
@@ -87,6 +81,8 @@ docker-compose down
 - App Laravel: http://127.0.0.1:8080
 - PHPMyadmin: http://127.0.0.1:8085
 - Mysql PORTA: 3306, SERVER: mysql-app, LOGIN: root, PASS: laravel
+
+## Comandos Docker
 
 ```bash
 docker exec -it lara-app_laravel-app_1 /bin/bash
