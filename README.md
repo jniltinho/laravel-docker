@@ -49,8 +49,9 @@ docker-compose version
 ```bash
 git clone https://github.com/jniltinho/laravel-docker.git
 cd laravel-docker
-docker run --rm -it -v $PWD:/app composer create-project --prefer-dist laravel/laravel lara-app
-docker run --rm -it -v $PWD:/app composer cp docker-compose.yaml Dockerfile lara-app/
+docker pull composer
+docker run --rm -it -v $PWD:/app -u $(id -u):$(id -g) composer create-project --prefer-dist laravel/laravel lara-app
+docker run --rm -it -v $PWD:/app -u $(id -u):$(id -g) composer cp docker-compose.yaml Dockerfile lara-app/
 
 cd lara-app
 docker-compose up -d --build
