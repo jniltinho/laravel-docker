@@ -1,8 +1,8 @@
-FROM wyveo/nginx-php-fpm:latest
+FROM jniltinho/nginx-php-fpm:latest
 
 WORKDIR /usr/share/nginx/
 
-RUN sed -i "s|/usr/share/nginx/html|/usr/share/nginx/public|g" /etc/nginx/conf.d/default.conf
+#RUN sed -i "s|/usr/share/nginx/html|/usr/share/nginx/public|g" /etc/nginx/conf.d/default.conf
 
 #RUN rm -rf /usr/share/nginx/html
 #RUN ln -s public html
