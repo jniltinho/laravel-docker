@@ -1,9 +1,8 @@
 FROM jniltinho/nginx-php-fpm:latest
 
+RUN sed -i "s|/usr/share/nginx/html|/usr/share/nginx/public|g" /etc/nginx/sites-available/default
+
 WORKDIR /usr/share/nginx/
-
-#RUN sed -i "s|/usr/share/nginx/html|/usr/share/nginx/public|g" /etc/nginx/conf.d/default.conf
-
 #RUN rm -rf /usr/share/nginx/html
 #RUN ln -s public html
 #COPY . /usr/share/nginx
