@@ -100,6 +100,6 @@ docker-compose down
 - [Docker em 22 Minutos](https://www.youtube.com/watch?v=Kzcz-EVKBEQ)
 - [NodeJS e Docker + Docker-Compose](https://www.youtube.com/watch?v=AVNADGzXrrQ)
 - [Vídeo 1 Docker-Compose](https://www.youtube.com/watch?v=HxPz3eLnXZk)
-- [Vídeo 2 Docker-Compose](https://www.youtube.com/watch?v=VXTQFhy7Dt8)s
+- [Vídeo 2 Docker-Compose](https://www.youtube.com/watch?v=VXTQFhy7Dt8)
 - [Tutorial laravel](https://fullcycle.com.br/docker-e-docker-composer-na-pratica-criando-ambiente-laravel/)
 - [Vídeo Laravel](https://www.youtube.com/watch?v=vnE9fCCGNWw)
