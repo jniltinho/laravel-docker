@@ -49,7 +49,6 @@ docker-compose version
 ```bash
 git clone https://github.com/jniltinho/laravel-docker.git
 cd laravel-docker
-docker pull composer
 
 ## Caso você esteja no Linux/Mac, execute os passos abaixo:
 docker run --rm -it -v $PWD:/app -u $(id -u):$(id -g) composer create-project --prefer-dist laravel/laravel lara-app
@@ -60,6 +59,7 @@ cp docker-compose.yaml Dockerfile lara-app/
 docker run --rm -it -v $PWD:/app composer create-project --prefer-dist laravel/laravel lara-app
 docker run --rm -it -v $PWD:/app composer cp docker-compose.yaml Dockerfile lara-app/
 
+## Depois execute os passos abaixo para todos SOs
 cd lara-app
 docker-compose up -d --build
 docker-compose ps
