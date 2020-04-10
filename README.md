@@ -51,13 +51,13 @@ git clone https://github.com/jniltinho/laravel-docker.git
 cd laravel-docker
 
 ## Caso você esteja no Linux/Mac, execute os passos abaixo:
-docker run --rm -it -v $PWD:/app -u $(id -u):$(id -g) composer create-project --prefer-dist laravel/laravel lara-app
+docker run --rm -it -v $(pwd):/app -u $(id -u):$(id -g) composer create-project --prefer-dist laravel/laravel lara-app
 chown -Rf $(id -u):$(id -g) lara-app
 cp docker-compose.yaml Dockerfile lara-app/
 
 ## Caso você esteja no Windows, execute os passos abaixo:
-docker run --rm -it -v $PWD:/app composer create-project --prefer-dist laravel/laravel lara-app
-docker run --rm -it -v $PWD:/app composer cp docker-compose.yaml Dockerfile lara-app/
+docker run --rm -it -v $(pwd):/app composer create-project --prefer-dist laravel/laravel lara-app
+docker run --rm -it -v $(pwd):/app composer cp docker-compose.yaml Dockerfile lara-app/
 
 ## Depois execute os passos abaixo para todos SOs
 cd lara-app
