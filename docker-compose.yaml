@@ -3,11 +3,11 @@ version: '3'
 
 services:
     laravel-app:
-      build: .
+      image: jniltinho/nginx-php-fpm:latest
       ports: 
         - "8080:80"
       volumes:
-        - ./:/usr/share/nginx
+        - ./:/var/www
       networks:
         - app-network
 
