@@ -80,7 +80,7 @@ docker-compose exec laravel-app php artisan migrate
 ## Comandos Docker e Docker-Compose
 
 ```bash
-docker exec -it lara-app_laravel-app_1 /bin/bash
+docker exec -it app_laravel-app_1 /bin/bash
 docker-compose ps
 docker-compose exec laravel-app /bin/bash
 docker-compose exec laravel-app php artisan cache:clear
