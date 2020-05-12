@@ -3,7 +3,7 @@ version: '3'
 
 services:
     laravel-app:
-      image: jniltinho/nginx-php-fpm:latest
+      image: jniltinho/caddy-php-fpm:latest
       ports: 
         - "8080:80"
       volumes:
